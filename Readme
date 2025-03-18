@@ -1,0 +1,24 @@
+This project is a web security exercise focused on identifying and mitigating various vulnerabilities in a Flask-based web application that simulates a simple banking system using "Zoobars" as virtual currency.
+
+
+Security Analysis – Explored and exploited common web vulnerabilities, including:
+
+Cross-Site Scripting (XSS)
+Cross-Site Request Forgery (CSRF)
+SQL Injection
+Session Fixation
+Race Conditions in Transactions
+Fixing Vulnerabilities – Implemented security patches to prevent attacks:
+
+Parameterized Queries to protect against SQL Injection.
+CSRF Tokens to secure transactions.
+Input Sanitization to mitigate XSS.
+Session Management Improvements to prevent fixation attacks.
+Concurrency Controls to prevent race conditions in money transfers.
+Sandboxing & Privilege Separation – Improved system isolation to minimize security risks.
+
+Authentication & Authorization Hardening – Strengthened access control mechanisms.
+
+Logging & Monitoring – Enhanced security monitoring and logging to detect potential threats.
+
+This project helped me gain hands-on experience in web security, ethical hacking, and secure coding practices.
