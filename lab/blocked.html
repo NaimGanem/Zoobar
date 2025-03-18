@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blocked</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #7f1d1d 0%, #111827 50%, #000000 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: system-ui, -apple-system, sans-serif;
+            padding: 1rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .floating-bg {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            filter: blur(40px);
+            animation: pulse 2s infinite;
+        }
+
+        .floating-bg.top {
+            top: -100px;
+            left: -100px;
+            background: rgba(239, 68, 68, 0.2);
+        }
+
+        .floating-bg.bottom {
+            bottom: -100px;
+            right: -100px;
+            background: rgba(249, 115, 22, 0.2);
+            animation-delay: 0.7s;
+        }
+
+        .container {
+            position: relative;
+            background: rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            border-radius: 1rem;
+            padding: 2rem;
+            max-width: 600px;
+            width: 100%;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        .icon {
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .icon svg {
+            width: 96px;
+            height: 96px;
+            fill: none;
+            stroke: #ef4444;
+            stroke-width: 2;
+            animation: pulse 2s infinite;
+        }
+
+        .icon::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(239, 68, 68, 0.2);
+            border-radius: 50%;
+            filter: blur(20px);
+            width: 96px;
+            height: 96px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            line-height: 1;
+        }
+
+        .blocked {
+            display: block;
+            color: #ef4444;
+            font-size: 4.5rem;
+            margin-top: 0.5rem;
+            animation: pulse 2s infinite;
+        }
+
+        .warning-icons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .warning-icons svg {
+            width: 32px;
+            height: 32px;
+            fill: none;
+            stroke: #ef4444;
+            stroke-width: 2;
+        }
+
+        .warning-icons svg:nth-child(2) {
+            stroke: #eab308;
+        }
+
+        p {
+            text-align: center;
+            color: #d1d5db;
+            font-size: 1.125rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .error-code {
+            text-align: center;
+            font-family: monospace;
+            color: rgba(239, 68, 68, 0.8);
+            font-size: 0.875rem;
+        }
+
+        .glitch-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(239, 68, 68, 0.05), transparent);
+            opacity: 0.5;
+            mix-blend-mode: overlay;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        @media (max-width: 640px) {
+            h1 { font-size: 2.5rem; }
+            .blocked { font-size: 3.5rem; }
+            .container { padding: 1.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-bg top"></div>
+    <div class="floating-bg bottom"></div>
+    
+    <div class="container">
+        <div class="icon">
+            <svg viewBox="0 0 24 24">
+                <path d="M3 3l18 18M12 3a9 9 0 019 9M12 3a9 9 0 00-9 9m9-9v9m0 0a9 9 0 01-9 9 9 9 0 009 9 9 9 0 009-9"></path>
+            </svg>
+        </div>
+
+        <h1>
+            FUCK YOU
+            <span class="blocked">BLOCKED</span>
+        </h1>
+
+        <div class="warning-icons">
+            <svg viewBox="0 0 24 24">
+                <path d="M3 3l18 18M12 3a9 9 0 019 9M12 3a9 9 0 00-9 9m9-9v9m0 0a9 9 0 01-9 9 9 9 0 009 9 9 9 0 009-9"></path>
+            </svg>
+            <svg viewBox="0 0 24 24">
+                <path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+            </svg>
+            <svg viewBox="0 0 24 24">
+                <path d="M3 3l18 18M12 3a9 9 0 019 9M12 3a9 9 0 00-9 9m9-9v9m0 0a9 9 0 01-9 9 9 9 0 009 9 9 9 0 009-9"></path>
+            </svg>
+        </div>
+
+        <p>
+            Access to this resource has been denied. Your request was blocked due to suspicious activity or violation of our security policies.
+        </p>
+
+        <div class="error-code">Error Code: AD_MATAI</div>
+        <div class="glitch-overlay"></div>
+    </div>
+</body>
+</html>
